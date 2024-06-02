@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-# Sample data for upcoming transit schedules
 transit_schedules = [
     {
         "transit_mode": "rail",
@@ -38,9 +37,6 @@ def get_transit_schedule():
 
     if not latitude or not longitude:
         return jsonify({'error': 'Invalid coordinates'}), 400
-
-    # For this example, we return the predefined schedules.
-    # In a real application, you would query a database or another service for this information.
     response = {
         "next_schedules": transit_schedules
     }
